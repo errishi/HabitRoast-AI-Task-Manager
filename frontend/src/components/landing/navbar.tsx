@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
-  Flame,
   Menu,
   X,
 } from "lucide-react";
@@ -22,10 +21,10 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Features", href: "/#features" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Testimonials", href: "/#testimonials" },
+    { label: "FAQ", href: "/#faq" },
   ];
 
   return (
@@ -36,9 +35,9 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 flex justify-center sm:px-4 pt-4"
     >
       <nav
-        className={`flex w-full max-w-[calc(100%-2rem)] sm:max-w-5xl items-center justify-between rounded-full border border-white/[0.08] px-4 sm:py-2.5 py-1.5 transition-all duration-500 ${isScrolled
-          ? "bg-black/70 shadow-xl shadow-black/30 backdrop-blur-xl backdrop-saturate-[1.8] border-white/[0.1]"
-          : "bg-white/[0.04] backdrop-blur-md backdrop-saturate-150"
+        className={`flex w-full max-w-[calc(100%-2rem)] sm:max-w-5xl items-center justify-between rounded-full border border-white/8 px-4 sm:py-2.5 py-1.5 transition-all duration-500 ${isScrolled
+          ? "bg-black/70 shadow-xl shadow-black/30 backdrop-blur-xl backdrop-saturate-[1.8] border-white/1"
+          : "bg-white/4 backdrop-blur-md backdrop-saturate-150"
           }`}
       >
         {/* Logo */}
@@ -71,7 +70,7 @@ export function Navbar() {
           <Link href="/auth/signup">
             <Button
               size="sm"
-              className="rounded-full border border-white/[0.1] bg-white/[0.05] px-5 text-sm font-medium text-white/80 backdrop-blur-sm transition-all duration-300 hover:border-red-500/30 hover:bg-red-500/10 hover:text-white hover:shadow-lg hover:shadow-red-500/10"
+              className="rounded-full border border-white/10 bg-white/5 px-5 text-sm font-medium text-white/80 backdrop-blur-sm transition-all duration-300 hover:border-red-500/30 hover:bg-red-500/10 hover:text-white hover:shadow-lg hover:shadow-red-500/10"
               id="nav-get-started-btn"
             >
               Get Started
@@ -82,7 +81,7 @@ export function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="rounded-full p-2 text-white/70 transition-colors hover:bg-white/[0.05] hover:text-white md:hidden"
+          className="rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white md:hidden"
           id="mobile-menu-toggle"
           aria-label="Toggle menu"
         >
@@ -96,7 +95,8 @@ export function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="absolute top-full left-4 right-4 mt-2 overflow-hidden rounded-2xl border border-white/[0.08] bg-black/80 backdrop-blur-xl md:hidden"
+          transition={{ duration: 0.2 }}
+          className="absolute top-full left-4 right-4 mt-2 overflow-hidden rounded-2xl border border-white/8 bg-black/80 backdrop-blur-xl md:hidden"
         >
           <div className="flex flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
@@ -104,14 +104,14 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMobileOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-white/70 transition-colors hover:bg-white/[0.05] hover:text-white"
+                className="rounded-lg px-4 py-3 text-sm font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
               >
                 {link.label}
               </Link>
             ))}
-            <div className="mt-3 flex flex-col gap-2 border-t border-white/[0.06] pt-3">
+            <div className="mt-3 flex flex-col gap-2 border-t border-white/8 pt-3">
               <Link href="/auth/signup">
-                <Button className="w-full rounded-full border border-white/[0.1] bg-white/[0.05] text-white/80 hover:border-red-500/30 hover:bg-red-500/10 hover:text-white">
+                <Button className="w-full rounded-full border border-white/10 bg-white/5 text-white/80 hover:border-red-500/30 hover:bg-red-500/10 hover:text-white">
                   Get Started
                 </Button>
               </Link>

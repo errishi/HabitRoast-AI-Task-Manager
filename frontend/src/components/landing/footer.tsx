@@ -7,10 +7,10 @@ import { Flame } from "lucide-react";
 
 const footerLinks = {
   Product: [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Features", href: "/#features" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Pricing", href: "/#pricing" },
+    { label: "FAQ", href: "/#faq" },
   ],
   Company: [
     { label: "About", href: "/about" },
@@ -57,7 +57,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06] px-4 pt-16 pb-8">
+    <footer className="relative border-t border-white/6 px-4 pt-16 pb-8">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
@@ -84,7 +84,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="flex size-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-white/30 transition-all duration-200 hover:border-white/[0.12] hover:bg-white/[0.05] hover:text-white/60"
+                  className="flex size-9 items-center justify-center rounded-lg border border-white/8 bg-white/2 text-white/30 transition-all duration-200 hover:border-white/12 hover:bg-white/5 hover:text-white/60"
                 >
                   {link.icon}
                 </a>
@@ -114,7 +114,7 @@ export function Footer() {
           ))}
         </div>
 
-        <Separator className="my-8 bg-white/[0.06]" />
+        <Separator className="my-8 bg-white/6" />
 
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
