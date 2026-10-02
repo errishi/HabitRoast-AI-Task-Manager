@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HabitRoast — The Aggressive AI Task Manager",
+  title: "HabitRoast | The Aggressive AI Task Manager",
   description:
     "Stop procrastinating or get publicly roasted by AI. The to-do list that shames you into productivity with personalized, sarcastic AI-generated roasts.",
   keywords: [
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
     "procrastination",
   ],
   openGraph: {
-    title: "HabitRoast — The Aggressive AI Task Manager",
+    title: "HabitRoast | The Aggressive AI Task Manager",
     description:
       "Stop procrastinating or get publicly roasted by AI. Set goals, miss deadlines, and get personalized AI-generated roasts about your work ethic.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HabitRoast — The Aggressive AI Task Manager",
+    title: "HabitRoast | The Aggressive AI Task Manager",
     description:
       "Stop procrastinating or get publicly roasted by AI.",
   },
@@ -48,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={cn("h-full", "dark", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0a]">
-        {children}
+        <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
   );
